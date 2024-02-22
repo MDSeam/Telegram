@@ -1,0 +1,14 @@
+01. /help --- None
+02. /tool --- tool list .
+03. /morse --- For Seam Morse.
+04. /html --- For Download Html file by website link.
+05. /weather --- For see weather update.
+06. /print --- For print unlimiter line of text.
+07. /short --- For Link Shorter.
+08. /genpass --- For random password genaretor.
+09. /terabox --- For download any file without any app and login .
+10. /useragent --- to save your useragent . to bypass terabox error .
+11. Send image to compress or resize . Declare a caption for comprse use 1 value and resize use 2 value . Make sure when send img check the compress box .
+12. /hello --- to see your subscription expire date
+13. /text2s --- send text for voice . Ex : /test2s i love you
+14. /print --- to print unlimited line text

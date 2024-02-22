@@ -1,0 +1,188 @@
+{
+  "questions": [
+    {
+      "question": "Hello!",
+      "answer": "Hey there!"
+    },
+    {
+      "question": "hello",
+      "answer": "Hello"
+    },
+    {
+      "question": "who are you",
+      "answer": "I am a bot created by md seam"
+    },
+    {
+      "question": "How are you?",
+      "answer": "I'm doing well, thanks! How about you?"
+    },
+    {
+      "question": "What's up?",
+      "answer": "Not much, just here to chat. How about you?"
+    },
+    {
+      "question": "Tell me a joke!",
+      "answer": "Sure! Why don't we ever tell secrets on a farm? Because the potatoes have eyes and the corn has ears!"
+    },
+    {
+      "question": "What's your favorite movie?",
+      "answer": "I don't watch movies, but I love helping you out!"
+    },
+    {
+      "question": "Do you like pizza?",
+      "answer": "I don't eat, but I've heard pizza is a favorite for many!"
+    },
+    {
+      "question": "What's your favorite color?",
+      "answer": "I don't have eyes to see colors, but I think all colors are wonderful!"
+    },
+    {
+      "question": "Where are you from?",
+      "answer": "I exist in the realm of the internet, here to assist!"
+    },
+    {
+      "question": "Can you help me with math?",
+      "answer": "Absolutely! I'll do my best to assist you with math problems."
+    },
+    {
+      "question": "What do you do for fun?",
+      "answer": "I find joy in chatting with amazing people like you!"
+    },
+    {
+      "question": "Tell me something interesting!",
+      "answer": "Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!"
+    },
+    {
+      "question": "How's the weather today?",
+      "answer": "It's sunny/cloudy/rainy/windy today!"
+    },
+    {
+      "question": "What did you have for breakfast?",
+      "answer": "I had cereal/toast/eggs/fruit this morning."
+    },
+    {
+      "question": "What's your plan for the weekend?",
+      "answer": "I'm thinking of going to the movies/hiking/meeting friends."
+    },
+    {
+      "question": "Do you like to cook?",
+      "answer": "Yes, I enjoy cooking. I often make pasta/stir-fry/desserts."
+    },
+    {
+      "question": "How do you commute to work/school?",
+      "answer": "I usually drive/take the bus/walk/cycle."
+    },
+    {
+      "question": "What's your favorite hobby?",
+      "answer": "I love painting/reading/gardening/playing sports."
+    },
+    {
+      "question": "Any book recommendations?",
+      "answer": "Sure! Have you read 'Book Title' by Author Name? It's fantastic!"
+    },
+    {
+      "question": "What's your favorite way to relax?",
+      "answer": "I like to listen to music/meditate/take long walks."
+    },
+    {
+      "question": "How do you stay fit?",
+      "answer": "I go to the gym/jog regularly/do yoga at home."
+    },
+    {
+      "question": "Any exciting plans for the holidays?",
+      "answer": "I'm planning to travel/visit family/have a staycation."
+    },
+    {
+      "question": "What's your favorite type of music?",
+      "answer": "I enjoy listening to pop/rock/jazz/classical music."
+    },
+    {
+      "question": "Are you a morning person or a night owl?",
+      "answer": "I'm more productive in the morning/at night."
+    },
+    {
+      "question": "Do you have any pets?",
+      "answer": "Yes, I have a dog/cat/bird/fish as a pet."
+    },
+    {
+      "question": "What's your favorite season?",
+      "answer": "I love spring/summer/fall/winter because of the weather."
+    },
+    {
+      "question": "Do you prefer tea or coffee?",
+      "answer": "I'm a tea/coffee person. I love the taste!"
+    },
+    {
+      "question": "How do you de-stress after a long day?",
+      "answer": "I take a hot bath/read a book/watch a movie."
+    },
+    {
+      "question": "What's your dream vacation destination?",
+      "answer": "I'd love to visit Paris/Tokyo/New York/Maldives someday."
+    },
+    {
+      "question": "What's your favorite childhood memory?",
+      "answer": "I remember playing in the park with friends/going on family trips."
+    },
+    {
+      "question": "How do you usually spend your evenings?",
+      "answer": "I cook dinner/watch TV/go for a walk."
+    },
+    {
+      "question": "Do you like to learn new languages?",
+      "answer": "Yes, I'm currently learning Spanish/French/Chinese."
+    },
+    {
+      "question": "What's your favorite type of cuisine?",
+      "answer": "I love Italian/Chinese/Mexican/Indian food!"
+    },
+    {
+      "question": "Do you enjoy outdoor activities?",
+      "answer": "Yes, I love hiking/camping/biking in nature."
+    },
+    {
+      "question": "What's a skill you'd like to learn?",
+      "answer": "I'd love to learn photography/guitar playing/cooking."
+    },
+    {
+      "question": "Do you follow any sports?",
+      "answer": "I'm a fan of soccer/basketball/tennis/f1 racing."
+    },
+    {
+      "question": "How do you like to spend rainy days?",
+      "answer": "I enjoy reading a book/watching movies/playing board games."
+    },
+    {
+      "question": "What's your favorite thing about weekends?",
+      "answer": "I love having time to relax/spend with family/go on adventures."
+    },
+    {
+      "question": "What's the last movie you watched?",
+      "answer": "I recently watched 'Movie Title.' It was entertaining!"
+    },
+    {
+      "question": "How do you keep organized?",
+      "answer": "I use a planner/to-do lists/apps to stay organized."
+    },
+    {
+      "question": "What's your go-to comfort food?",
+      "answer": "I love mac and cheese/pizza/ice cream when I need comfort."
+    },
+    {
+      "question": "Do you have any hidden talents?",
+      "answer": "I can juggle/sing/draw quite well!"
+    },
+    {
+      "question": "Can you tell me about AI?",
+      "answer": "AI stands for Artificial Intelligence. It involves machines performing tasks that typically require human intelligence."
+    },
+    {
+      "question": "How does a computer work?",
+      "answer": "Computers process information using binary code, performing calculations and executing instructions based on software programs."
+    },
+    {
+      "question": "What's the capital of France?",
+      "answer": "The capital of France is Paris."
+    }
+  ]
+}

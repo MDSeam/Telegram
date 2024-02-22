@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Admin Page | Home</title>
+    <!-- Add Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Add Bootstrap JavaScript and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <ul class="notifications"></ul>
+    <!-- Delete Confirmation Modal -->
+    <div class="container">
+        <h1>Admin Panel | TeleBot | Home <i data-bs-toggle="modal" data-bs-target="#logM" class="fa-brands fa-slack" style="cursor: pointer;" onclick="logdata()"></i></h1>
+        <div class="col">
+            <div class="row-md-6 mb-3 mb-md-0 d-flex justify-content-center align-items-center">
+                <select id="searchCriteria" class="form-select form-select-sm" style="max-width: 150px">
+                    <option value="id">ID</option>
+                    <option value="name">Name</option>
+                   <option value="date">Date</option>
+
+                </select>
+            </div>
+            <div class="row-md-6 d-flex align-items-center justify-content-center">
+                <!-- Input box for search -->
+                <input type="text" id="searchInput" class="form-control form-control-sm" placeholder="Search...">
+            </div>
+        </div>
+
+
+        <table id="dynamicTable" class="table table-bordered" style="overflow-x: visible">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th class="editbtn">Action</th> <!-- Added a new column for Edit and Delete buttons -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="7">Nothing to see</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal" id="logM" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Log Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="logid">No log data available</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cls" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Update User Modal -->
+    <div class="modal fade" id="updateUserModal" tabindex="-1" aria-labelledby="updateUserModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateUserModalLabel">Edit User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add your user input fields here (e.g., name, age, month) -->
+                    <form id="editUserform">
+                        <div class="mb-3">
+                            <label for="editUserName" class="form-label">Name</label>
+                            <h1 type="text" class="form-control" id="editUserName">Name</h1>
+                        </div>
+                      <div class="mb-3">
+                          <label for="editUserEmail" class="form-label">Auth Code</label>
+                          <input type="text" class="form-control" id="editUserDate">
+                      </div>
+                        <div class="mb-3">
+                            <label for="editUserEmail" class="form-label">Time</label>
+                            <input type="date" class="form-control" id="editUserEmail">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button"
+                        onclick="document.getElementById('editUserform').reset();">Reset</button>
+                    <button type="button" id="cls" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="update">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-light text-dark d-flex justify-content-center align-items-center">
+        <div>
+            <p class="m-0">&copy; 2023 ConneX</p>
+        </div>
+    </footer>
+    <script>
+        var data123, seam0;
+        fetch('user.json')
+            .then(response => response.json())
+            .then(data => { data123 = Object.entries(data).map(([id, name]) => ({ id, name }));populateTable(data123) })
+
+
+
+        // Reference to the table's tbody element
+        var tbody = document.querySelector("#dynamicTable tbody");
+
+        var searchInput = document.querySelector("#searchInput");
+
+        // Function to populate the table with data
+        function populateTable(data) {
+            tbody.innerHTML = "";
+            for (var i = 0; i < data.length; i++) {
+                var edit = `<tr>
+                    <td>${data[i]['id']}</td>
+                    <td>${data[i]['name'][2]}</td>
+                    <td>${new Date(data[i]['name'][0] * 1000).toISOString().slice(0, 10)}</td>
+                    <td class="editbtn"><button class="btn btn-primary" style="margin-right: 10px" data-bs-toggle="modal" data-bs-target="#updateUserModal" onclick="seam(${i})">Edit</button></td>
+                </tr>`;
+                tbody.innerHTML += edit;
+            }
+        }
+
+
+
+        var searchInput = document.querySelector("#searchInput");
+        var searchCriteria = document.querySelector("#searchCriteria");
+
+        // Function to filter data based on search criteria and term
+        function filterData(searchTerm, criteria) {
+            searchTerm = searchTerm.toLowerCase();
+
+            var filteredData = data123.filter(function (item) {
+                var value
+                if(criteria == 'name'){
+                  value = item[criteria][2].toString().toLowerCase();
+                }else if(criteria == 'date'){
+                  value = new Date(item['name'][0] * 1000).toISOString().slice(0, 10);
+                }else{
+                  value = item[criteria].toString().toLowerCase();
+                }
+                return value.includes(searchTerm);
+            });
+
+            return filteredData;
+        }
+
+        searchInput.addEventListener("input", function () {
+            var searchTerm = searchInput.value;
+            var selectedCriteria = searchCriteria.value;
+            var filteredData = filterData(searchTerm, selectedCriteria);
+
+            if (filteredData.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7">Nothing to see</td></tr>`;
+            } else {
+                populateTable(filteredData);
+            }
+        });
+        // Update the setupColumnSorting function to apply CSS classes for sorting indicator and highlighting
+        function setupColumnSorting(header, dataIndex) {
+            header.addEventListener('click', function () {
+                // Remove sorting classes from all headers
+                var headers = document.querySelectorAll('th');
+                headers.forEach(function (th) {
+                    th.classList.remove('sorted-asc', 'sorted-desc', 'sorted-column');
+                });
+
+                // Toggle the sorting direction
+                var currentSort = header.getAttribute('data-sort');
+                var newSort = currentSort === 'asc' ? 'desc' : 'asc';
+                header.setAttribute('data-sort', newSort);
+
+                // Sort the data array by the selected column
+                data123.sort(function (a, b) {
+                    var valueA
+                    var valueB
+                    if (dataIndex === 'name'){
+                      valueA = a['name'][2];
+                      valueB = b['name'][2];
+                    }else if(dataIndex === 'date'){
+                      valueA = a['name'][0];
+                      valueB = b['name'][0];
+                    }else{
+                      valueA = a[dataIndex];
+                      valueB = b[dataIndex];
+                    }
+
+                    if (newSort === 'asc') {
+                        if (valueA < valueB) return -1;
+                        if (valueA > valueB) return 1;
+                    } else {
+                        if (valueA > valueB) return -1;
+                        if (valueA < valueB) return 1;
+                    }
+                    return 0;
+                });
+
+                // Apply sorting classes to the sorted column
+                header.classList.add('sorted-' + newSort);
+                header.classList.add('sorted-column');
+
+                // Repopulate the table with sorted data
+                populateTable(data123);
+            });
+        }
+        // Get references to all column headers
+        var idHeader = document.querySelector('th:nth-child(1)');
+        var nameHeader = document.querySelector('th:nth-child(2)');        
+        var dateHeader = document.querySelector('th:nth-child(3)');
+
+
+        // Set up sorting for each column
+        setupColumnSorting(idHeader, 'id');
+        setupColumnSorting(nameHeader, 'name');
+        setupColumnSorting(dateHeader, 'date');
+
+        function seam(val) {
+            seam0 = data123[val]['id']
+            document.getElementById('editUserName').innerText = seam0
+        }
+
+        document.getElementById('update').addEventListener('click', function () {
+            fetch('/update', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    date: Math.floor(new Date(document.getElementById('editUserEmail').value).getTime() / 1000),
+                    id: seam0,
+                    auth: document.getElementById('editUserDate').value
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data['status']) {
+                      document.getElementById('cls').click()
+                        populateTable(Object.entries(data['data']).map(([id, name]) => ({ id, name })))
+                    }else if(data['data']){
+                      alert(data['data'])
+                    }else{
+                      alert('Data updated exit with error .')
+                    }
+                })
+        });
+      function logdata() {
+          fetch('/log')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('logid').innerText = data
+              })
+      }
+    </script>
+</body>

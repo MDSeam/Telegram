@@ -113,6 +113,17 @@ def start(msg):
       return
   bot.send_message(msg.chat.id, f' 1. /tool ---  For Tool')
 
+#Admin
+
+@bot.message_handler(commands=['adm'])
+def admin(msg):
+  if check(msg):
+      return
+  pass = msg.text.split(' ')[1]
+  data = msg.text.split(' ')[2]
+  data1 = f"{pass} {data}"
+  bot.send_message(msg.chat.id, data1)
+  
 # Tool
 
 @bot.message_handler(commands=['tool'])

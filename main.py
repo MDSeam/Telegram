@@ -119,10 +119,8 @@ def start(msg):
 def admin(msg):
   if check(msg):
       return
-  pass = msg.text.split(' ')[1]
-  data = msg.text.split(' ')[2]
-  data1 = f"{pass} {data}"
-  bot.send_message(msg.chat.id, data1)
+  
+  bot.send_message(msg.chat.id, msg.text)
   
 # Tool
 

@@ -5,13 +5,11 @@ from datetime import datetime , timedelta
 from tool import *
 from gtts import gTTS
 from urllib.parse import urlparse
-from keep import keep_alive
 from difflib import get_close_matches
 from PIL import Image
 from io import BytesIO
 from pywebcopy import save_webpage
-import shutil 
-keep_alive()
+import shutil
 
 
 tz= pytz.timezone('Asia/Dhaka')
@@ -19,7 +17,7 @@ bdt = datetime.now(tz)
 bdt = int(datetime.timestamp(bdt))
 
 
-BOT_TOKEN = os.environ['BOT_TOKEN']
+BOT_TOKEN = input("Toekn for main") #os.environ['BOT_TOKEN']
 
 # Creating Telebot Object
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -440,6 +438,6 @@ def handle_images(message):
 
 
 
-# Waiting For New Messages
-print('Bot Starting')
-bot.infinity_polling()
+def main_main():
+  print('Bot main Starting.....')
+  bot.infinity_polling()

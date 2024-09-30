@@ -3,6 +3,10 @@ from threading import Thread
 from datetime import datetime
 import os
 
+
+from seam import seam_main
+from main import main_main
+
 app = Flask(__name__,template_folder='')
 
 
@@ -42,6 +46,10 @@ def run():
   app.run(debug=False,host='0.0.0.0', port=8080)
 
 
-def keep_alive():
-  t = Thread(target=run)
-  t.start()
+t = Thread(target=run)
+t.start()
+t1 = Thread(target=seam_main)
+t1.start()
+t1 = Thread(target=main_main)
+t1.start()
+

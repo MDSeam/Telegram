@@ -1,7 +1,7 @@
 import telebot
 import os
 
-Token = input("Token for seam :") #os.environ["Auth"]
+Token = os.environ["Autha"]
 bot1 = telebot.TeleBot(Token)
 
 

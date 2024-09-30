@@ -17,7 +17,7 @@ bdt = datetime.now(tz)
 bdt = int(datetime.timestamp(bdt))
 
 
-BOT_TOKEN = input("Toekn for main") #os.environ['BOT_TOKEN']
+BOT_TOKEN = os.environ['BOT_TOKEN']
 
 # Creating Telebot Object
 bot = telebot.TeleBot(BOT_TOKEN)

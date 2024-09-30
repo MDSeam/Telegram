@@ -4,8 +4,8 @@ from datetime import datetime
 import os
 
 
-from seam import seam_main
-from main import main_main
+from seam import *
+from main import *
 
 app = Flask(__name__,template_folder='')
 

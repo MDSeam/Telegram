@@ -17,10 +17,10 @@ bdt = datetime.now(tz)
 bdt = int(datetime.timestamp(bdt))
 
 
-BOT_TOKEN = os.environ['Auth']
-
+print("Input token main : ")
+ss2 = input("Input token main : ")
 # Creating Telebot Object
-bot = telebot.TeleBot(BOT_TOKEN)
+bot = telebot.TeleBot(ss2)
 def logg(user,text : str):
   if user.chat.first_name:
     idname = f'{user.chat.first_name} {user.chat.last_name}'

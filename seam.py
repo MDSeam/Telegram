@@ -1,8 +1,11 @@
 import telebot
 import os
 
-Token = os.environ["Auth1"]
-bot1 = telebot.TeleBot(Token)
+import os
+
+print("Input token seam : ")
+ss1 = input("Input token seam : ")
+bot1 = telebot.TeleBot(ss1)
 
 
 @bot1.message_handler(content_types="text")
